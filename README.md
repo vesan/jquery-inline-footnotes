@@ -2,9 +2,11 @@
 
 Allows users to hover footnotes to view the footnote content inline. Implemented as a jQuery plugin.
 
-Works with Markdown style footnotes. TODO: What's the needed markup?
+Works out of the box with Markdown style footnotes that many intrepreters implement (for example [Maruku](http://maruku.rubyforge.org/maruku.html#extra) and [PHP Markdown Extra](http://michelf.com/projects/php-markdown/extra/#fn-output)).
 
 Demo can be seen at ...
+
+TODO: Add picture.
 
 ## Dependencies
 
@@ -16,11 +18,38 @@ TODO
 
 ## Usage
 
-```javascript
-$("[rel=footnote]").inlineFootnote()
+```html
+<!-- Example HTML -->
+<p>
+  Sentence.
+  <sup id="fnref:1">
+    <a href="#fn:1" rel="footnote">1</a>
+  </sup>
+</p>
+
+<ol>
+  <li id="fn:1">
+    <p>
+      Footnotes content 1.
+    </p>
+    <a href="#fnref:1" rev="footnote">↩</a>
+  </li>
+</ol>
 ```
 
+```javascript
+$("[rel=footnote]").inlineFootnote({
+  // possible options
+})
+```
+
+The selector given to $ is the selector for the links. The content to be shown is found by finding an element with `id` that matches the links `href` in this case `fn:1`. If the matching content has elements with attribute `rev` with value `footnote`, those will be hidden (can be changed with `hideFromContent` option.
+
 Styling is done with CSS.
+
+### Options
+
+* *hideFromContent*: Elements matching this selector are hidden when showing the footnote content inside the opened box. Defaults to "[rev=footnote]".
 
 ## Development
 
@@ -29,3 +58,4 @@ jQuery Inline Footnotes is written with Coffee-Script. Tests are written with [J
 ## Author
 
 Vesa Vänskä ~ @vesan
+

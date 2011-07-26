@@ -49,7 +49,9 @@ Styling is done with CSS.
 
 ### Options
 
+* *hideDelay*: The delay before hiding the footnote box after user moves mouse out of the link or footnote box. Defaults to 200.
 * *hideFromContent*: Elements matching this selector are hidden when showing the footnote content inside the opened box. Defaults to "[rev=footnote]".
+* *modalId*: Id applied to the footnote box. Defaults to "footnote_box"
 
 ## Development
 

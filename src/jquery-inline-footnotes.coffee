@@ -15,10 +15,10 @@
 
     @openModal = (event) =>
       unless @modal
-        footnoteContent = $("[id='" + @footnoteId + "']").children().not("[rev=footnote]")
+        footnoteContent = $("[id='" + @footnoteId + "']").children().not(@options.hideFromContent)
         linkOffset = @el.offset()
         @modal = $("<div />", {
-          id: "footnote_modal",
+          id: @options.modalId
           html: footnoteContent.clone(),
           css: {
             position: "absolute",
@@ -39,7 +39,7 @@
               console.log "remove"
               @modal.remove()
               @modal = null
-            ), @options.hidingDelay
+            ), @options.hideDelay
 
     @hoveringFootnote = (event) ->
       @modal.is(event.target) || $(event.target).closest(@modal).length > 0 || event.target == @el[0]
@@ -47,7 +47,9 @@
     @initialize()
 
   $.inlineFootnote.defaultOptions = 
-    hidingDelay: 200
+    hideDelay: 200,
+    hideFromContent: "[rev=footnote]"
+    modalId: "footnote_box"
 
   $.fn.inlineFootnote = (options) ->
     @each ->

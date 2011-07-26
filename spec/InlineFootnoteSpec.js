@@ -10,12 +10,12 @@ describe("jquery.inlineFootnote", function() {
     });
 
     it("shows a modal box", function() {
-      var modal = $("#footnote_modal");
+      var modal = $("#footnote_box");
       expect(modal.is(":visible")).toBeTruthy();
     });
 
     it("shows correct content in the modal box (removes the back link)", function() {
-      var modal = $("#footnote_modal");
+      var modal = $("#footnote_box");
       console.log(modal.html());
       expect(modal.html()).toEqual("<p>Footnotes content 1.</p>");
     });

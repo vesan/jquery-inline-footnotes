@@ -19,7 +19,7 @@
         linkOffset = @el.offset()
         @modal = $("<div />", {
           id: "footnote_modal",
-          html: footnoteContent,
+          html: footnoteContent.clone(),
           css: {
             position: "absolute",
             top: linkOffset.top,

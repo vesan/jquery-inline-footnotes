@@ -15,15 +15,15 @@ Released under the MIT License.
       @footnoteId = @el.attr("href").match(/#(.*)/)[1]
 
       if(@footnoteId)
-        @el.mouseenter @openModal
-        $("body").mousemove @closeModal
+        @el.mouseenter @openBox
+        $("body").mousemove @closeBox
 
-    @openModal = (event) =>
-      unless @modal
+    @openBox = (event) =>
+      unless @box
         footnoteContent = $("[id='" + @footnoteId + "']").children().not(@options.hideFromContent)
         linkOffset = @el.offset()
-        @modal = $("<div />", {
-          id: @options.modalId
+        @box = $("<div />", {
+          id: @options.boxId,
           html: footnoteContent.clone(),
           css: {
             position: "absolute",
@@ -31,25 +31,25 @@ Released under the MIT License.
             left: linkOffset.left + @el.outerWidth()
           }
         }).appendTo "body"
-        @positionModal()
+        @positionBox()
 
-    @closeModal = (event) =>
-      if @modal
+    @closeBox = (event) =>
+      if @box
         if @isHoveringFootnote(event)
           clearTimeout(@closeTimeout)
           @closeTimeout = null
         else
           unless @closeTimeout
             @closeTimeout = setTimeout (=>
-              @modal.remove()
-              @modal = null
+              @box.remove()
+              @box = null
             ), @options.hideDelay
 
     @isHoveringFootnote = (event) ->
-      @modal.is(event.target) || $(event.target).closest(@modal).length > 0 || event.target == @el[0]
+      @box.is(event.target) || $(event.target).closest(@box).length > 0 || event.target == @el[0]
 
-    @positionModal = ->
-      modalHorizontalPadding = parseInt(@modal.css("padding-left")) + parseInt(@modal.css("padding-right"))
+    @positionBox = ->
+      boxHorizontalPadding = parseInt(@box.css("padding-left")) + parseInt(@box.css("padding-right"))
       linkLeftOffset = @el.offset().left
       windowWidth = $(window).width()
 
@@ -57,20 +57,20 @@ Released under the MIT License.
         # Position box right of the link
         boxLeft = linkLeftOffset + 20
 
-        boxWidth = windowWidth - boxLeft - modalHorizontalPadding - @options.boxMargin * 2
+        boxWidth = windowWidth - boxLeft - boxHorizontalPadding - @options.boxMargin * 2
         if boxWidth > @options.maximumBoxWidth
           boxWidth = @options.maximumBoxWidth
 
       else
         # Position box left of the link
-        boxWidth = linkLeftOffset - modalHorizontalPadding - @options.boxMargin * 2
+        boxWidth = linkLeftOffset - boxHorizontalPadding - @options.boxMargin * 2
         if boxWidth > @options.maximumBoxWidth
           boxWidth = @options.maximumBoxWidth
 
         boxLeft = linkLeftOffset - boxWidth - @options.boxMargin * 2
 
 
-      @modal.css(
+      @box.css(
         width: boxWidth
         left: boxLeft
       )
@@ -82,7 +82,7 @@ Released under the MIT License.
     hideDelay: 200
     hideFromContent: "[rev=footnote]"
     maximumBoxWidth: 500
-    modalId: "footnote_box"
+    boxId: "footnote_box"
 
   $.fn.inlineFootnote = (options) ->
     @each ->

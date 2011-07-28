@@ -1,8 +1,3 @@
-###
-jQuery Inline Footnotes v1.0
-Released under the MIT License.
-###
-
 (($)->
   $.inlineFootnote = (el, options) ->
     @el = $(el);

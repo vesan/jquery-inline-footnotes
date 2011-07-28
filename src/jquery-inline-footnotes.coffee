@@ -34,9 +34,8 @@ Released under the MIT License.
     @closeModal = (event) =>
       if @modal
         if @hoveringFootnote(event)
-          if @closeTimeout
-            clearTimeout(@closeTimeout)
-            @closeTimeout = null
+          clearTimeout(@closeTimeout)
+          @closeTimeout = null
         else
           unless @closeTimeout
             @closeTimeout = setTimeout (=>

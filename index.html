@@ -1,0 +1,168 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <title>Simple Inline Footnotes</title> 
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+  <script src="javascripts/jquery-inline-footnotes.js"></script> 
+  <script> 
+    $(function() {
+      $("[rel=footnote]").inlineFootnote();
+    });
+  </script> 
+  
+  <style type="text/css"> 
+    body {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      line-height: 1.5em;
+      color: #333;
+    }
+    #wrapper { width: 960px; margin: 76px auto; }
+    a { color: #00e; }
+    a:visited { color: #008; }
+
+    /* Code highlighting */
+    .highlight .hll { background-color: #ffffcc }
+    .highlight  { background: #f8f8f8; }
+    .highlight .c { color: #408080; font-style: italic } /* Comment */
+    .highlight .err { border: 1px solid #FF0000 } /* Error */
+    .highlight .k { color: #008000; font-weight: bold } /* Keyword */
+    .highlight .o { color: #666666 } /* Operator */
+    .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+    .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+    .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+    .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+    .highlight .gd { color: #A00000 } /* Generic.Deleted */
+    .highlight .ge { font-style: italic } /* Generic.Emph */
+    .highlight .gr { color: #FF0000 } /* Generic.Error */
+    .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+    .highlight .gi { color: #00A000 } /* Generic.Inserted */
+    .highlight .go { color: #808080 } /* Generic.Output */
+    .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+    .highlight .gs { font-weight: bold } /* Generic.Strong */
+    .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+    .highlight .gt { color: #0040D0 } /* Generic.Traceback */
+    .highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+    .highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+    .highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+    .highlight .kp { color: #008000 } /* Keyword.Pseudo */
+    .highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+    .highlight .kt { color: #B00040 } /* Keyword.Type */
+    .highlight .m { color: #666666 } /* Literal.Number */
+    .highlight .s { color: #BA2121 } /* Literal.String */
+    .highlight .na { color: #7D9029 } /* Name.Attribute */
+    .highlight .nb { color: #008000 } /* Name.Builtin */
+    .highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+    .highlight .no { color: #880000 } /* Name.Constant */
+    .highlight .nd { color: #AA22FF } /* Name.Decorator */
+    .highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+    .highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+    .highlight .nf { color: #0000FF } /* Name.Function */
+    .highlight .nl { color: #A0A000 } /* Name.Label */
+    .highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+    .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+    .highlight .nv { color: #19177C } /* Name.Variable */
+    .highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+    .highlight .w { color: #bbbbbb } /* Text.Whitespace */
+    .highlight .mf { color: #666666 } /* Literal.Number.Float */
+    .highlight .mh { color: #666666 } /* Literal.Number.Hex */
+    .highlight .mi { color: #666666 } /* Literal.Number.Integer */
+    .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+    .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+    .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+    .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+    .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+    .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+    .highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+    .highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+    .highlight .sx { color: #008000 } /* Literal.String.Other */
+    .highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+    .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+    .highlight .ss { color: #19177C } /* Literal.String.Symbol */
+    .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+    .highlight .vc { color: #19177C } /* Name.Variable.Class */
+    .highlight .vg { color: #19177C } /* Name.Variable.Global */
+    .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+    .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+    
+  </style> 
+</head> 
+<body> 
+  <div id="wrapper">
+    <h1>jQuery Inline Footnotes</h1>
+
+    <p>Allows users to hover footnotes to view the footnote content inline. Implemented as a jQuery plugin.</p>
+
+    <p>Works out of the box with Markdown style footnotes that many intrepreters implement (for example <a href="http://maruku.rubyforge.org/maruku.html#extra">Maruku</a> and <a href="http://michelf.com/projects/php-markdown/extra/#footnotes">PHP Markdown Extra</a>).</p>
+
+    <p>Screenshot can be seen below and you can test the <a href="http://vesavanska.com/jquery-inline-footnotes/example.html">demo page</a> yourself. GitHub has the <a href="http://github.com/vesan/jquery-inline-footnotes">code</a>.</p>
+
+    <p><img src="https://github.com/vesan/jquery-inline-footnotes/raw/master/screenshot.png" alt="Screenshot of jQuery Inline Footnotes in action"></p>
+
+    <h2>Dependencies</h2>
+
+    <p>jQuery. Tested with 1.6.2 but probably works with older versions too.</p>
+
+    <h2>Supported Browsers</h2>
+
+    <p>Supports all the browsers jQuery supports namely Internet Explorer 6.0+, Mozilla Firefox 2.0+, Safari 3.0+, Opera 9.0+, and Google Chrome.</p>
+
+    <h2>Usage</h2>
+
+    <div class="highlight"><pre>
+<span class="c">&lt;!-- Example HTML --&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  Sentence.
+  <span class="nt">&lt;sup</span> <span class="na">id=</span><span class="s">"fnref:1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#fn:1"</span> <span class="na">rel=</span><span class="s">"footnote"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/sup&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;ol&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"fn:1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Footnotes content 1.
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#fnref:1"</span> <span class="na">rev=</span><span class="s">"footnote"</span><span class="nt">&gt;</span>↩<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+    </pre></div>
+
+
+<div class="highlight"><pre>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"[rel=footnote]"</span><span class="p">).</span><span class="nx">inlineFootnote</span><span class="p">({</span>
+  <span class="c1">// possible options</span>
+<span class="p">})</span>
+</pre></div>
+
+
+    <p>The selector given to $ is the selector for the links. The content to be shown is found by finding an element with <code>id</code> that matches the links <code>href</code> in this case <code>fn:1</code>. If the matching content has elements with attribute <code>rev</code> with value <code>footnote</code>, those will be hidden (can be changed with <code>hideFromContent</code> option.</p>
+
+    <p>Styling is done with CSS.</p>
+
+    <h3>Options</h3>
+
+    <ul>
+    <li>
+    <strong>boxMargin</strong>: How much margin is left between the link and the footnote box and the edge of the browser and the footnote box. Defaults to <code>20</code> (px).</li>
+    <li>
+    <strong>hideDelay</strong>: The delay before hiding the footnote box after user moves mouse out of the link or footnote box. Defaults to <code>200</code> (ms).</li>
+    <li>
+    <strong>hideFromContent</strong>: Elements matching this selector are hidden when showing the footnote content inside the opened box. Defaults to <code>"[rev=footnote]"</code>.</li>
+    <li>
+    <strong>maximumBoxWidth</strong>: Maximum width of the footnote box. Defaults to <code>500</code> (px).</li>
+    <li>
+    <strong>modalId</strong>: Id applied to the footnote box. Defaults to <code>"footnote_box"</code>
+    </li>
+    </ul><h2>Development</h2>
+
+    <p>jQuery Inline Footnotes is written with Coffee-Script. Tests are written with <a href="http://pivotal.github.com/jasmine/">Jasmine</a>. Open SpecRunner.html to run the tests.</p>
+
+    <h2>Author</h2>
+
+    <p>Vesa Vänskä ~ @vesan</p>
+  </div>
+</body> 
+</html> 
+

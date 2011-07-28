@@ -89,29 +89,29 @@
   </style> 
 </head> 
 <body> 
-  <div id="wrapper">
-    <h1>jQuery Inline Footnotes</h1>
+<div id="wrapper">
+<h1>jQuery Inline Footnotes</h1>
 
-    <p>Allows users to hover footnotes to view the footnote content inline. Implemented as a jQuery plugin.</p>
+<p>Allows users to hover footnotes to view the footnote content inline. Implemented as a jQuery plugin.</p>
 
-    <p>Works out of the box with Markdown style footnotes that many intrepreters implement (for example <a href="http://maruku.rubyforge.org/maruku.html#extra">Maruku</a> and <a href="http://michelf.com/projects/php-markdown/extra/#footnotes">PHP Markdown Extra</a>).</p>
+<p>Works out of the box with Markdown style footnotes that many intrepreters implement (for example <a href="http://maruku.rubyforge.org/maruku.html#extra">Maruku</a> and <a href="http://michelf.com/projects/php-markdown/extra/#footnotes">PHP Markdown Extra</a>).</p>
 
-    <p>Screenshot can be seen below and you can test the <a href="http://vesavanska.com/jquery-inline-footnotes/example.html">demo page</a> yourself. GitHub has the <a href="http://github.com/vesan/jquery-inline-footnotes">code</a>.</p>
+<p>Screenshot can be seen below and you can test the <a href="http://vesavanska.com/jquery-inline-footnotes/example.html">demo page</a> yourself. GitHub has the <a href="http://github.com/vesan/jquery-inline-footnotes">code</a>.</p>
 
-    <p><img src="https://github.com/vesan/jquery-inline-footnotes/raw/master/screenshot.png" alt="Screenshot of jQuery Inline Footnotes in action"></p>
+<p><img src="https://github.com/vesan/jquery-inline-footnotes/raw/master/screenshot.png" alt="Screenshot of jQuery Inline Footnotes in action"></p>
 
-    <h2>Dependencies</h2>
+<h2>Dependencies</h2>
 
-    <p>jQuery. Tested with 1.6.2 but probably works with older versions too.</p>
+<p>jQuery. Tested with 1.6.2 but probably works with older versions too.</p>
 
-    <h2>Supported Browsers</h2>
+<h2>Supported Browsers</h2>
 
-    <p>Supports all the browsers jQuery supports namely Internet Explorer 6.0+, Mozilla Firefox 2.0+, Safari 3.0+, Opera 9.0+, and Google Chrome.</p>
+<p>Supports all the browsers jQuery supports namely Internet Explorer 6.0+, Mozilla Firefox 2.0+, Safari 3.0+, Opera 9.0+, and Google Chrome.</p>
 
-    <h2>Usage</h2>
+<h2>Usage</h2>
 
-    <div class="highlight"><pre>
-<span class="c">&lt;!-- Example HTML --&gt;</span>
+<div class="highlight">
+<pre><span class="c">&lt;!-- Example HTML --&gt;</span>
 <span class="nt">&lt;p&gt;</span>
   Sentence.
   <span class="nt">&lt;sup</span> <span class="na">id=</span><span class="s">"fnref:1"</span><span class="nt">&gt;</span>
@@ -127,42 +127,44 @@
     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#fnref:1"</span> <span class="na">rev=</span><span class="s">"footnote"</span><span class="nt">&gt;</span>↩<span class="nt">&lt;/a&gt;</span>
   <span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ol&gt;</span>
-    </pre></div>
+</pre>
+</div>
 
 
-<div class="highlight"><pre>
-<span class="nx">$</span><span class="p">(</span><span class="s2">"[rel=footnote]"</span><span class="p">).</span><span class="nx">inlineFootnote</span><span class="p">({</span>
+<div class="highlight">
+<pre><span class="nx">$</span><span class="p">(</span><span class="s2">"[rel=footnote]"</span><span class="p">).</span><span class="nx">inlineFootnote</span><span class="p">({</span>
   <span class="c1">// possible options</span>
 <span class="p">})</span>
-</pre></div>
+</pre>
+</div>
 
 
-    <p>The selector given to $ is the selector for the links. The content to be shown is found by finding an element with <code>id</code> that matches the links <code>href</code> in this case <code>fn:1</code>. If the matching content has elements with attribute <code>rev</code> with value <code>footnote</code>, those will be hidden (can be changed with <code>hideFromContent</code> option.</p>
+<p>The selector given to $ is the selector for the links. The content to be shown is found by finding an element with <code>id</code> that matches the links <code>href</code> in this case <code>fn:1</code>. If the matching content has elements with attribute <code>rev</code> with value <code>footnote</code>, those will be hidden (can be changed with <code>hideFromContent</code> option.</p>
 
-    <p>Styling is done with CSS.</p>
+<p>Styling is done with CSS.</p>
 
-    <h3>Options</h3>
+<h3>Options</h3>
 
-    <ul>
-    <li>
-    <strong>boxMargin</strong>: How much margin is left between the link and the footnote box and the edge of the browser and the footnote box. Defaults to <code>20</code> (px).</li>
-    <li>
-    <strong>hideDelay</strong>: The delay before hiding the footnote box after user moves mouse out of the link or footnote box. Defaults to <code>200</code> (ms).</li>
-    <li>
-    <strong>hideFromContent</strong>: Elements matching this selector are hidden when showing the footnote content inside the opened box. Defaults to <code>"[rev=footnote]"</code>.</li>
-    <li>
-    <strong>maximumBoxWidth</strong>: Maximum width of the footnote box. Defaults to <code>500</code> (px).</li>
-    <li>
-    <strong>modalId</strong>: Id applied to the footnote box. Defaults to <code>"footnote_box"</code>
-    </li>
-    </ul><h2>Development</h2>
+<ul>
+<li>
+<strong>boxMargin</strong>: How much margin is left between the link and the footnote box and the edge of the browser and the footnote box. Defaults to <code>20</code> (px).</li>
+<li>
+<strong>hideDelay</strong>: The delay before hiding the footnote box after user moves mouse out of the link or footnote box. Defaults to <code>200</code> (ms).</li>
+<li>
+<strong>hideFromContent</strong>: Elements matching this selector are hidden when showing the footnote content inside the opened box. Defaults to <code>"[rev=footnote]"</code>.</li>
+<li>
+<strong>maximumBoxWidth</strong>: Maximum width of the footnote box. Defaults to <code>500</code> (px).</li>
+<li>
+<strong>boxId</strong>: Id applied to the footnote box. Defaults to <code>"footnote_box"</code>
+</li>
+</ul><h2>Development</h2>
 
-    <p>jQuery Inline Footnotes is written with Coffee-Script. Tests are written with <a href="http://pivotal.github.com/jasmine/">Jasmine</a>. Open SpecRunner.html to run the tests.</p>
+<p>jQuery Inline Footnotes is written with Coffee-Script. Tests are written with <a href="http://pivotal.github.com/jasmine/">Jasmine</a>. Open SpecRunner.html to run the tests.</p>
 
-    <h2>Author</h2>
+<h2>Author</h2>
 
-    <p>Vesa Vänskä ~ @vesan</p>
-  </div>
+<p>Vesa Vänskä ~ @vesan</p></div>
+</div>
 </body> 
 </html> 
 

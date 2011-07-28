@@ -40,7 +40,6 @@
           } else {
             if (!this.closeTimeout) {
               return this.closeTimeout = setTimeout((__bind(function() {
-                console.log("remove");
                 this.modal.remove();
                 return this.modal = null;
               }, this)), this.options.hideDelay);

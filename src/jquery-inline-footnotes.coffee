@@ -41,7 +41,6 @@ Released under the MIT License.
         else
           unless @closeTimeout
             @closeTimeout = setTimeout (=>
-              console.log "remove"
               @modal.remove()
               @modal = null
             ), @options.hideDelay

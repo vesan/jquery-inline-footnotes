@@ -2,6 +2,7 @@
 jQuery Inline Footnotes v1.0
 Released under the MIT License.
 ###
+
 (($)->
   $.inlineFootnote = (el, options) ->
     @el = $(el);
@@ -30,6 +31,7 @@ Released under the MIT License.
             left: linkOffset.left + @el.outerWidth()
           }
         }).appendTo "body"
+        @positionModal()
 
     @closeModal = (event) =>
       if @modal
@@ -47,11 +49,40 @@ Released under the MIT License.
     @isHoveringFootnote = (event) ->
       @modal.is(event.target) || $(event.target).closest(@modal).length > 0 || event.target == @el[0]
 
+    @positionModal = ->
+      modalHorizontalPadding = parseInt(@modal.css("padding-left")) + parseInt(@modal.css("padding-right"))
+      linkLeftOffset = @el.offset().left
+      windowWidth = $(window).width()
+
+      if (windowWidth / 2) > linkLeftOffset
+        # Position box right of the link
+        boxLeft = linkLeftOffset + 20
+
+        boxWidth = windowWidth - boxLeft - modalHorizontalPadding - @options.boxMargin * 2
+        if boxWidth > @options.maximumBoxWidth
+          boxWidth = @options.maximumBoxWidth
+
+      else
+        # Position box left of the link
+        boxWidth = linkLeftOffset - modalHorizontalPadding - @options.boxMargin * 2
+        if boxWidth > @options.maximumBoxWidth
+          boxWidth = @options.maximumBoxWidth
+
+        boxLeft = linkLeftOffset - boxWidth - @options.boxMargin * 2
+
+
+      @modal.css(
+        width: boxWidth
+        left: boxLeft
+      )
+
     @initialize()
 
   $.inlineFootnote.defaultOptions = 
-    hideDelay: 200,
+    boxMargin: 20
+    hideDelay: 200
     hideFromContent: "[rev=footnote]"
+    maximumBoxWidth: 500
     modalId: "footnote_box"
 
   $.fn.inlineFootnote = (options) ->

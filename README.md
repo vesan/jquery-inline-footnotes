@@ -4,9 +4,9 @@ Allows users to hover footnotes to view the footnote content inline. Implemented
 
 Works out of the box with Markdown style footnotes that many intrepreters implement (for example [Maruku](http://maruku.rubyforge.org/maruku.html#extra) and [PHP Markdown Extra](http://michelf.com/projects/php-markdown/extra/#footnotes)).
 
-Demo can be seen at ...
+Screenshot can be seen below and you can test the [demo page](http://vesavanska.com/jquery-inline-footnotes/example.html) yourself.
 
-TODO: Add picture.
+![Screenshot of jQuery Inline Footnotes in action](screenshot.png)
 
 ## Dependencies
 
@@ -14,7 +14,7 @@ jQuery. Tested with 1.6.2 but probably works with older versions too.
 
 ## Supported Browsers
 
-TODO
+Supports all the browsers jQuery supports namely Internet Explorer 6.0+, Mozilla Firefox 2.0+, Safari 3.0+, Opera 9.0+, and Google Chrome.
 
 ## Usage
 

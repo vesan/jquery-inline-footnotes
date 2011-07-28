@@ -2,7 +2,7 @@
 
 Allows users to hover footnotes to view the footnote content inline. Implemented as a jQuery plugin.
 
-Works out of the box with Markdown style footnotes that many intrepreters implement (for example [Maruku](http://maruku.rubyforge.org/maruku.html#extra) and [PHP Markdown Extra](http://michelf.com/projects/php-markdown/extra/#fn-output)).
+Works out of the box with Markdown style footnotes that many intrepreters implement (for example [Maruku](http://maruku.rubyforge.org/maruku.html#extra) and [PHP Markdown Extra](http://michelf.com/projects/php-markdown/extra/#footnotes)).
 
 Demo can be seen at ...
 

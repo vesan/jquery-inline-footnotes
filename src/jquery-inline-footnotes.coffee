@@ -33,7 +33,7 @@ Released under the MIT License.
 
     @closeModal = (event) =>
       if @modal
-        if @hoveringFootnote(event)
+        if @isHoveringFootnote(event)
           clearTimeout(@closeTimeout)
           @closeTimeout = null
         else
@@ -44,7 +44,7 @@ Released under the MIT License.
               @modal = null
             ), @options.hideDelay
 
-    @hoveringFootnote = (event) ->
+    @isHoveringFootnote = (event) ->
       @modal.is(event.target) || $(event.target).closest(@modal).length > 0 || event.target == @el[0]
 
     @initialize()

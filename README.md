@@ -6,7 +6,7 @@ Works out of the box with Markdown style footnotes that many intrepreters implem
 
 Screenshot can be seen below and you can test the [demo page](http://vesavanska.com/jquery-inline-footnotes/example.html) yourself.
 
-![Screenshot of jQuery Inline Footnotes in action](screenshot.png)
+![Screenshot of jQuery Inline Footnotes in action](https://github.com/vesan/jquery-inline-footnotes/raw/master/screenshot.png)
 
 ## Dependencies
 

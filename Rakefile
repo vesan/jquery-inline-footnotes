@@ -3,7 +3,7 @@
 require 'uglifier'
 require 'tempfile'
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 task :default => [:minify]
 

@@ -1,4 +1,4 @@
-// jQuery Inline Footnotes v1.0.0
+// jQuery Inline Footnotes v1.0.1
 // Copyright (c) 2011 Vesa Vänskä, released under the MIT License.
 
 (function() {

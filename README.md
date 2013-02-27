@@ -45,7 +45,7 @@ $("[rel=footnote]").inlineFootnote({
 })
 ```
 
-The selector given to $ is the selector for the links. The content to be shown is found by finding an element with `id` that matches the links `href` in this case `fn:1`. If the matching content has elements with attribute `rev` with value `footnote`, those will be hidden (can be changed with `hideFromContent` option.
+The selector given to $ is the selector for the links. The content to be shown is found by finding an element with `id` that matches the links `href` in this case `fn:1`. If the matching content has elements with attribute `rev` with value `footnote`, those will be hidden (can be changed with `hideFromContent` option).
 
 Styling is done with CSS.
 

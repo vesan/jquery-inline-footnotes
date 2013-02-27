@@ -15,7 +15,7 @@
 
     @openBox = (event) =>
       unless @box
-        footnoteContent = $("[id='" + @footnoteId + "']").children().not(@options.hideFromContent)
+        footnoteContent = $("[id='" + @footnoteId + "']").find(":not(#{@options.hideFromContent})")
         linkOffset = @el.offset()
         @box = $("<div />", {
           id: @options.boxId,

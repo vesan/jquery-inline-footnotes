@@ -1,7 +1,7 @@
 describe("jquery.inlineFootnote", function() {
   describe("without nested backlinks", function() {
     beforeEach(function() {
-      $("#example").html('<p>Sed lacinia tortor vel ligula dictum lobortis. Vestibulum vestibulum est ac eros lacinia hendrerit <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p><div class="footnotes"> <hr> <ol> <li id="fn:1"><p>Footnotes content 1.</p><a href="#fnref:1" rev="footnote">↩</a></li></ol></div>');
+      $("#example").html('<p>Sed lacinia tortor vel ligula dictum lobortis. Vestibulum vestibulum est ac eros lacinia hendrerit <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup>.</p><div class="footnotes"> <hr> <ol> <li id="fn:1"><p>Footnotes content <em>1</em>.</p><a href="#fnref:1" rev="footnote">↩</a></li></ol></div>');
       $("[rel=footnote]").inlineFootnote();
       $("sup[id='fnref:1'] a").mouseenter();
     });
@@ -20,7 +20,7 @@ describe("jquery.inlineFootnote", function() {
       it("shows correct content in the footnote box (removes the back link)", function() {
         $("sup[id='fnref:1'] a").mouseenter();
         var box = $("#footnote_box");
-        expect(box.html()).toEqual("<p>Footnotes content 1.</p>");
+        expect(box.html()).toEqual("<p>Footnotes content <em>1</em>.</p>");
       });
     });
   });

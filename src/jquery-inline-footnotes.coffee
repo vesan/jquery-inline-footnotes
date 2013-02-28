@@ -15,11 +15,11 @@
 
     @openBox = (event) =>
       unless @box
-        footnoteContent = $("[id='" + @footnoteId + "']").find(":not(#{@options.hideFromContent})")
+        footnoteContent = $("[id='" + @footnoteId + "']").children().filter(":not('#{@options.hideFromContent}')")
         linkOffset = @el.offset()
         @box = $("<div />", {
           id: @options.boxId,
-          html: footnoteContent.clone(),
+          html: footnoteContent.clone().find(@options.hideFromContent).remove().end(),
           css: {
             position: "absolute",
             top: linkOffset.top,

@@ -59,7 +59,7 @@ Styling is done with CSS.
 
 ## Development
 
-jQuery Inline Footnotes is written with Coffee-Script. Tests are written with [Jasmine](http://pivotal.github.com/jasmine/). Open SpecRunner.html to run the tests.
+jQuery Inline Footnotes is written with Coffee-Script. Tests are written with [Jasmine](https://jasmine.github.io/). Open SpecRunner.html to run the tests.
 
 ## Author
 
